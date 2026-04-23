@@ -1,0 +1,5 @@
+[
+  {"id": 1, "titulo": "El Padrino", "director": "Francis Ford Coppola", "anio": 1972, "ganadora": true, "categoria": "Drama"},
+  {"id": 2, "titulo": "Pulp Fiction", "director": "Quentin Tarantino", "anio": 1994, "ganadora": false, "categoria": "Crimen"},
+  {"id": 3, "titulo": "El rey leon", "director": "Roger Allers", "anio": 1994, "ganadora": false, "categoria": "Animacion"}
+]
