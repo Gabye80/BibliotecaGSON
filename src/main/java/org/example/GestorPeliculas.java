@@ -2,11 +2,10 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GestorPeliculas {
@@ -23,9 +22,9 @@ public class GestorPeliculas {
         File file = new File(ARCHIVO);
         if (!file.exists()) return new ArrayList<>();
         try (Reader reader = new FileReader(file)) {
-            Type tipo = new TypeToken<List<Pelicula>>() {}.getType();
-            List<Pelicula> lista = gson.fromJson(reader, tipo);
-            return lista != null ? lista : new ArrayList<>();
+            Pelicula[] array = gson.fromJson(reader, Pelicula[].class);
+            if (array == null) return new ArrayList<>();
+            return new ArrayList<>(Arrays.asList(array));
         } catch (IOException e) {
             System.out.println("Error al leer el fichero: " + e.getMessage());
             return new ArrayList<>();
